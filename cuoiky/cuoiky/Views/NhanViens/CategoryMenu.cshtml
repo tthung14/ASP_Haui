@@ -1,0 +1,7 @@
+﻿@model IEnumerable<cuoiky.Models.Phong>
+@foreach (var item in Model)
+{
+    var url = "/danhmuc/" + item.Maphong;
+    <a href="@url">@item.Tenphong</a>
+    <label>&nbsp;|&nbsp;</label>
+}

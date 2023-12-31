@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    List<kiemtra1.Models.NhanVien> l1 = ViewBag.l1;
+    List<kiemtra1.Models.NhanVien> l2 = ViewBag.l2;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Display</title>
+</head>
+<body>
+    <table border="1" style="border-collapse: collapse">
+        <tr>
+            <th colspan="6">
+                Danh sach nhan vien co so ngay lam < 20
+            </th>
+        </tr>
+        <tr>
+            <th>Mã nhân Viên</th>
+            <th>Họ tên</th>
+            <th>Địa chỉ</th>
+            <th>Số ngày làm</th>
+            <th>Lương ngày</th>
+            <th>Tiền lương</th>
+        </tr>
+        @foreach (var item in l1)
+        {
+            <tr>
+                <td>@item.manv</td>
+                <td>@item.hoten</td>
+                <td>@item.diachi</td>
+                <td>@item.songaylam</td>
+                <td>@item.luongngay</td>
+                <td>@item.tienluong</td>
+            </tr>
+        }
+    </table>
+    <br/>
+    <table border="1" style="border-collapse: collapse">
+        <tr>
+            <th colspan="6">
+                Danh sach nhan vien co so luong ngay > 190000
+            </th>
+        </tr>
+        <tr>
+            <th>Mã nhân Viên</th>
+            <th>Họ tên</th>
+            <th>Địa chỉ</th>
+            <th>Số ngày làm</th>
+            <th>Lương ngày</th>
+            <th>Tiền lương</th>
+        </tr>
+        @foreach (var item in l2)
+        {
+            <tr>
+                <td>@item.manv</td>
+                <td>@item.hoten</td>
+                <td>@item.diachi</td>
+                <td>@item.songaylam</td>
+                <td>@item.luongngay</td>
+                <td>@item.tienluong</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
